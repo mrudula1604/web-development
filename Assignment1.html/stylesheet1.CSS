@@ -1,0 +1,113 @@
+footer {
+    background-color: rgb(125, 179, 110);
+    color:antiquewhite;
+  }
+
+  h1{
+    background-color: rgb(125, 179, 110);
+  }
+
+body{
+    background-image: url(images/cleaning_mobile-jumbo-v2.gif);
+    background-repeat: no-repeat;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+.AddDetails{
+    background-color: rgb(224, 218, 161);
+    background-repeat: no-repeat;
+    margin: auto;
+    width:640px;
+    height: 780px;
+    padding-top: 10px;
+    opacity: 0.9;                 
+}
+
+table, th, td{
+    background-color: aliceblue;
+    border: 1px solid white;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}th{
+    background-color: grey;
+}
+table{
+    width: auto;
+    border-collapse: collapse;
+}
+
+footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color */
+    padding: 20px; /* Spacing inside the footer */
+    text-align: center; /* Center-align the content */
+    font-size: 16px; /* Font size */
+}
+
+nav {
+    background-color: #308a24; /* Background color for the navigation bar */
+    text-align: center; /* Center-align the menu */
+    padding: 10px; /* Add space from left and right */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points for list items */
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px; /* Add space from the left of the menu item */
+    margin-right: 20px; /* Add space from the right of the menu item */
+}
+
+nav a {
+    color: #fff; /* Text color for menu items */
+    text-decoration: none; /* Remove underlines from links */
+    font-weight: bold; /* Make the text bold */
+}
+
+nav a:hover {
+    color: #0074d9; /* Hover color for menu items */
+}
+
+.AddDetails {
+    background-color: #f0f0f0; /* Background color for the section */
+    text-align: center;
+    padding: 20px; /* Add padding inside the section */
+}
+
+/* CSS for the content container */
+.content-container {
+    display: inline-block;
+    max-width: 50%; /* Set a maximum width for the content container */
+    vertical-align: top; /* Align content to the top of the section */
+    text-align: left; /* Align form content to the left */
+}
+
+/* CSS for the form */
+form {
+    width: 100%; /* Make the form width 100% within the content container */
+    margin-bottom: 20px; /* Add space between form and video */
+    text-align: center;
+}
+
+/* CSS for the video container */
+.video-container {
+    display: inline-block;
+    max-width: 50%; /* Set a maximum width for the video container */
+    vertical-align: top; /* Align video to the top of the section */
+}
+
+video {
+    max-width: 100%; /* Ensure video fits within the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center-align the video horizontally */
+    opacity: 1;
+}
+
