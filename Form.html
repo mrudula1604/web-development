@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form id="myForm">
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="Miss" required="required"/>Miss
+			<input type="radio" name="title" id="mr" value="Mr" required="required"/>Mr.
+			<input type="radio" name="title" id="mrs" value="Mrs" required="required"/>Mrs.
+			<br><br>
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
+			<br><br>
+			<div id="error_firstName" style="display: none; color: red;">
+                Invalid First Name, Please enter valid first name
+                <br><br>
+            </div>
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+			<br><br>
+			<div id="error_lastName" style="display: none; color:red;">
+				Invalid Last Name, Please enter valid last name
+			</div>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
+			<br><br>
+			<div id="error_emailId" style="display: none; color: red;">
+                Invalid Email address, Please enter valid @northeastern.edu email address
+                <br><br>
+            </div>
+
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<br><br>
+			<div id="error_phoneNumber" style="display: none; color: red;">
+                Invalid phone number, Please enter valid phone number in xxx-xxx-xxxx format
+                <br><br>
+            </div>
+
+
+			<label for="streetAddress1">Street Address 1*:</label>
+			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
+			<br><br>
+            <div id = "error_Address1" style="display: none; color:red;">
+                Invalid address, Please enter a valid address.
+            </div>
+
+			<label for="streetAddress2">Street Address 2:</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+			<br><br>
+
+			<label for="city">City*:</label>
+			<input type="text" name="city" id="city" placeholder="city" />
+			<br><br>
+            <div id = "error_city" style="display: none; color:red;">
+                Invalid city, Please enter a valid city.
+            </div>
+
+			<label for="state">State*:</label>
+			<input type="text" name="state" id="state" placeholder="state" />
+			<br><br>
+            <div id = "error_state" style="display: none; color:red;">
+                Invalid state, Please enter a valid state.
+            </div>
+			
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+			<br><br>
+            <div id = "error_zipcode" style="display: none; color:red;">
+                Invalid zipcode, Please enter a valid zipcode of 5 digits.
+            </div>
+
+             
+            <label for="zipcode">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp 
+			<br><br>
+            <div id = check style ="display: none; color:red;">
+                Please select a source            
+            </div>
+            
+            <label for="drinks">Drinks*:</label>
+            <select id="drinks" onchange="validateDrink(this)">
+                <option value="None" value="0">Choices</option>
+                <option value="Coffee" value="1">Coffee</option>
+                <option value="Tea" value="2">Tea</option>
+                <option value="Sandwich" value="3">Sandwich</option>
+                <option value="Chipe" value = 4>Chips</option>
+            </select>
+            <br><br>
+            <!--<div id = "selectedCoffee"  style="display: none;">
+                <label id = "selected-Coffee" for="selectCoffee">Coffee-Large(1$ Extra)</label>
+                <input type="checkbox" name = "drink" value = coffee/>
+            </div>
+            <div id = "selectedTea"  style="display: none;">
+                <label id = "selected-Tea" for="selectTea">Lemon tea-Large(1$ Extra)</label>
+            </div>
+            <div id = "selectedSandwich"  style="display: none;">
+                <label id = "selected-Sandwich" for="selectSandwich">Chicken cheese sandwich-Large(1$ Extra)</label>
+            </div>-->
+            <span id = "test">
+                
+            </span>
+
+            <div id = "checkboxFit" style="visibility: hidden;">
+                <input type="checkbox" name="stuff" id = "Extra" onclick="addAdditionalInfo()">
+            </div>
+
+            <div id = "additionalInfo" style="display:none;">
+                <label for="addIns">Add instructions:</label>
+                <textarea name="text" id="Info" cols="30" rows="10">None.</textarea>
+            </div>
+
+            <br><br>
+			<label for="comments">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<br><br>
+            <div id = "error_comments" style="display: none; color:red;">
+                Please provide a comment or two for us to improve upon.
+            </div><br><br>
+			<input type="Submit">
+			<input type="Reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+
+ <script src="page1.js">
+
+ </script>
+    
+ </body>
+</html>

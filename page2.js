@@ -1,0 +1,46 @@
+var data = localStorage.getItem("object_name");
+    //localStorage.clear();
+
+    
+    var value0 = JSON.parse(data).Title;
+    var value1 = JSON.parse(data).FirstName;
+    var value2 = JSON.parse(data).LastName;
+    var value3 = JSON.parse(data).Email;
+    var value4 = JSON.parse(data).Phone;
+    var value5 = JSON.parse(data).City;
+    var value6 = JSON.parse(data).State;
+    var value7 = JSON.parse(data).Zipcode;
+    var value8 = JSON.parse(data).Comment;
+    var value9 = JSON.parse(data).Hear;
+    var value10 = JSON.parse(data).StreetAddress1;
+    var value11 = JSON.parse(data).StreetAddress2;
+    var value12 = JSON.parse(data).Food;
+    var value13 = JSON.parse(data).AddiInfo;
+    var table = document.getElementById("table");
+    var insert = table.insertRow(-1);
+    var title = insert.insertCell(0)
+    var firstName = insert.insertCell(1);
+    var lastName = insert.insertCell(2);
+    var mailID = insert.insertCell(3);
+    var phoneNum = insert.insertCell(4);
+    var add = insert.insertCell(5);
+    var city = insert.insertCell(6);
+    var state = insert.insertCell(7);
+    var zip = insert.insertCell(8);
+    var hear = insert.insertCell(9);
+    var food = insert.insertCell(10);
+    var addinf = insert.insertCell(11);
+    var com = insert.insertCell(12);
+    title.innerHTML = value0;    
+    firstName.innerHTML = value1;
+    lastName.innerHTML = value2;
+    mailID.innerHTML = value3;
+    phoneNum.innerHTML = value4;
+    city.innerHTML = value5;
+    state.innerHTML = value6;
+    zip.innerHTML = value7;
+    com.innerHTML = value8;
+    hear.innerHTML = value9;
+    add.innerHTML = value10 + " " + value11;
+    food.innerHTML = value12;
+    addinf.innerHTML = value13;

@@ -1,0 +1,24 @@
+label {
+    float: left;
+    width: 150px;}
+#container{
+    width: 1200px;
+    margin: auto;
+    background-color: beige;
+} 
+main{
+    padding: 50px;
+}
+table, th, td{
+
+    margin-top: 3%;
+    background-color: aliceblue;
+    border: 1px solid grey;
+    margin-bottom: 5%;
+}th{
+    background-color: grey;
+}
+table{
+    width: auto;
+    border-collapse: collapse;
+}
