@@ -1,4 +1,4 @@
-# 001067923_Tarush_G_Singh
+# Web-development Assignment-4
 This repository is for the 4th Assignment of web desing and user experience. 
 
 # Requirements
