@@ -27,7 +27,16 @@ $background-color_5: changeColor($main_background_color);
 p {
    color: var(--main-color);
 }
+.flexbox-container-1 {
+    display: flex;
+    justify-content: space-between;
+}
 
+.flex-section {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
 
 video{
 	display: block;
