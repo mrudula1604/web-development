@@ -1,0 +1,270 @@
+// variables
+
+@import "theme";
+
+$color_1: black;
+$color_2: white;
+$font-family_1: Arial, Helvetica, sans-serif;
+$font-family_2: 'Times New Roman', Times, serif;
+$background-color_1: white;
+$background-color_2: rgb(145, 144, 144);
+$background-color_3: rgb(68, 64, 64);
+$background-color_4: black;
+// change main backgroun to change the theme
+$main_background_color: white;
+$background-color_5: changeColor($main_background_color);
+
+.Main-container {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+//custom properties
+:root {
+    --main-color: $color_1;
+  }
+  
+p {
+   color: var(--main-color);
+}
+
+
+video{
+	display: block;
+	margin: auto;
+}
+
+//interpolation
+@mixin headerStyle($size, $align, $font) {
+    header {
+		background-color: $background-color_5;
+        box-shadow: 6px 4px 4px grey;
+	    padding-top: 10%;
+	    padding-bottom: 10%;
+	    text-decoration: underline;
+	    #{$size}: large;
+	    #{$align}: center;
+	    #{$font}: $font-family_1;
+	    font-style: bold;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+    }
+}
+@include headerStyle(font-size, text-align, font-family);
+
+
+body {
+	background-color: $main_background_color;
+	background-repeat: repeat-y;
+	font-family: $font-family_2;
+	padding: auto;
+	margin: 2%;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+#nav-bar {
+	box-shadow: 6px 4px 4px grey;
+}
+section {
+	box-shadow: 10px 5px 5px grey;
+	display: grid;
+	place-items: center;
+	align-content: center;
+	min-height: 70vh;
+	background-color: $background-color_5;
+	h4 {
+		font-size: medium;
+	}
+}
+
+table {
+	margin-top: 5%;
+	background-color: $background-color_2;
+	border: 1px solid rgb(187, 185, 185);
+	width: 50%;
+	border-collapse: collapse;
+}
+th {
+	margin-top: 5%;
+	background-color: $background-color_2;
+	border: 1px solid rgb(187, 185, 185);
+	background-color: $background-color_1;
+}
+td {
+	margin-top: 5%;
+	background-color: $background-color_2;
+	border: 1px solid rgb(187, 185, 185);
+}
+.hidden {
+	opacity: 0;
+	transition: all 2s;
+	filter: blur(5px);
+	transform: translateX(-100%);
+}
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
+img {
+	float: left;
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+}
+#column {
+	align-self: auto;
+	float: left;
+	padding: 20px;
+	column-width: 30%;
+	columns: 2;
+}
+#Skills {
+	margin-top: auto;
+}
+#Text {
+	float: right;
+}
+
+//Nesting and placeholder
+%link {
+	color: $color_1;
+	span {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		width: 70%;
+		padding: 10px;
+	}
+	&:hover {
+		span {
+			display: block;
+		}
+	}
+}
+
+//additional componenets i.e. scalable text size using mixin
+@mixin responsive-font($min-size, $max-size, $min-width, $max-width) {
+	@media screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+	  font-size: calc(#{$min-size} + 2 * (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width})));
+	}
+  }
+
+
+a {
+	@extend %link;
+}
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	margin-top: 0%;
+	background-color: $background-color_3;
+}
+li {
+	color: $color_2;
+	float: left;
+	display: inline;
+	padding: 8px;
+	&:hover {
+		background-color: $background-color_4;
+	}
+}
+h4 {
+	font-size: 14px; // Default font size for h4
+  	@include responsive-font(14px, 24px, 320px, 1440px);
+	background-color: $background-color_4;
+	color: $color_2;
+	opacity: 0.8;
+}
+h2 {
+	background-color: $background-color_4;
+	font-size: 18px; // Default font size for h2
+  	@include responsive-font(18px, 30px, 320px, 1440px);
+	color: $color_2;
+	opacity: 0.8;
+}
+#Projects {
+	img {
+		height: 112px;
+		width: 200px;
+		float: left;
+	}
+}
+#imagesGallery {
+	border: 1px solid black;
+	display: grid;
+	float: left;
+}
+.imgColumns {
+	width: 70%;
+	padding: 5px;
+	&:hover {
+		.Overlay {
+			opacity: 1;
+		}
+	}
+}
+#ImageContact {
+	img {
+		width: 30px;
+		height: 30px;
+	}
+}
+#Imagescon {
+	background: var(--bg-color);
+	border: 1px solid antiquewhite;
+	border-radius: 4px;
+	cursor: pointer;
+}
+#Contact {
+	padding-left: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 200px));
+	grid-gap: 2rem;
+	align-items: left;
+	text-align: left;
+	margin-top: 5rem;
+}
+.Overlay {
+	position: absolute;
+	opacity: 0;
+	height: 112px;
+	width: 200px;
+	transition: 0.5s ease;
+	background-color: $background-color_1;
+}
+.Text {
+	color: $color_1;
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	text-align: center;
+}
+
+// mixin to change the content size using media query
+$breakpoint: 480px;
+
+@mixin mobile-up {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@include mobile-up {
+    #nav-bar {
+      width: 100%;
+    }
+    .Main-container {
+      width: 70%;
+    }
+    section {
+      width: auto;
+    }
+	video{
+		width: 50%;
+		height: 50%;
+	}
+  }  

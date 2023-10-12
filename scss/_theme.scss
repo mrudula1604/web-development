@@ -1,0 +1,236 @@
+// Typography variables
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$line-height: 1.5;
+$font-weight-bold: bold;
+
+// Color variables
+$color-1: black;
+$color-2: white;
+
+// Background color variables
+$background-color-1: white;
+$background-color-2: rgb(145, 144, 144);
+$background-color-3: rgb(68, 64, 64);
+$background-color-4: black;
+
+@function changeColor($color) {
+  @if (lightness($color) > 70) {
+    @return rgb(252, 223, 159);
+  } @else {
+    @return white;
+  }
+}
+
+.Main-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+// Custom properties
+:root {
+  --main-color: $color-1;
+}
+
+p {
+  color: var(--main-color);
+}
+
+video {
+  display: block;
+  margin: auto;
+}
+
+// Interpolation
+@mixin headerStyle($size, $align, $font) {
+  header {
+    background-color: $background-color-1;
+    box-shadow: 6px 4px 4px grey;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-decoration: underline;
+    #{$size}: $font-size-large;
+    #{$align}: center;
+    #{$font}: #{$font-weight-bold};
+    font-style: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@include headerStyle(font-size, text-align, font-family);
+
+body {
+  background-color: $background-color-1;
+  background-repeat: repeat-y;
+  font-family: 'Times New Roman', Times, serif;
+  padding: auto;
+  margin: 2%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#nav-bar {
+  box-shadow: 6px 4px 4px grey;
+}
+
+section {
+  box-shadow: 10px 5px 5px grey;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 70vh;
+
+  h4 {
+    font-size: $font-size-medium;
+  }
+}
+
+table {
+  margin-top: 5%;
+  background-color: $background-color-2;
+  border: 1px solid rgb(187, 185, 185);
+  width: 50%;
+  border-collapse: collapse;
+}
+
+th {
+  margin-top: 5%;
+  background-color: $background-color-2;
+  border: 1px solid rgb(187, 185, 185);
+  background-color: $background-color-1;
+}
+
+td {
+  margin-top: 5%;
+  background-color: $background-color-2;
+  border: 1px solid rgb(187, 185, 185);
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+  filter: blur(5px);
+  transform: translateX(-100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+img {
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+#column {
+  align-self: auto;
+  float: left;
+  padding: 20px;
+  column-width: 30%;
+  columns: 2;
+}
+
+#Skills {
+  margin-top: auto;
+}
+
+#Text {
+  float: right;
+}
+
+// Nesting and placeholder
+%link {
+  color: $color-1;
+
+  span {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    padding: 10px;
+  }
+
+  &:hover {
+    span {
+      display: block;
+    }
+  }
+}
+
+a {
+  @extend %link;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin-top: 0%;
+  background-color: $background-color-3;
+}
+
+li {
+  color: $color-2;
+  float: left;
+  display: inline;
+  padding: 8px;
+
+  &:hover {
+    background-color: $background-color-4;
+  }
+}
+
+h4 {
+  background-color: $background-color-4;
+  color: $color-2;
+  opacity: 0.8;
+  font-size: $font-size-medium;
+}
+
+h2 {
+  background-color: $background-color-4;
+  color: $color-2;
+  opacity: 0.8;
+  font-size: $font-size-large;
+}
+
+#Projects {
+  img {
+    height: 112px;
+    width: 200px;
+    float: left;
+  }
+}
+
+#imagesGallery {
+  border: 1px solid black;
+  display: grid;
+  float: left;
+}
+
+.imgColumns {
+  width: 70%;
+  padding: 5px;
+
+  &:hover {
+    .Overlay {
+      opacity: 1;
+    }
+  }
+}
+
+#ImageContact {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
