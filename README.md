@@ -1,5 +1,5 @@
 # web-development
-This is assignment 7 where we need to use SCSS files instead of CSS.\
+This is assignment 5 where we need to use SCSS files instead of CSS.\
 
 - Use SCSS to style the HTML page
 - We can use previous assignments and edit them
