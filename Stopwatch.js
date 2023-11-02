@@ -1,4 +1,6 @@
 timeElement = document.querySelector('.watch .time');
+const timeDisplay = document.getElementById('time-display');
+const datePicker = document.getElementById('date-picker');
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const resetButton = document.getElementById('reset');
@@ -9,6 +11,15 @@ let interval = null;
 startButton.addEventListener('click',start);
 stopButton.addEventListener('click',stop);
 resetButton.addEventListener('click',reset);
+
+function updateTimeDisplay() {
+    const elapsed = Date.now() - startTime;
+    const time = new Date(elapsed);
+    const hours = time.getUTCHours().toString().padStart(2, '0');
+    const minutes = time.getUTCMinutes().toString().padStart(2, '0');
+    const seconds = time.getUTCSeconds().toString().padStart(2, '0');
+    timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+}
 
 function stopWatchTimer(){
     seconds++;
@@ -36,6 +47,8 @@ function stop () {
     clearInterval(interval);
     interval=null;
 }
+updateTimeDisplay();
+datePicker.valueAsDate = new Date();
 
 function reset(){
     stop();
