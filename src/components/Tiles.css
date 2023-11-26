@@ -1,0 +1,45 @@
+.tiles-container {
+    position: relative;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+}
+
+.tiles-container img {
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.minT, .maxT {
+    font-size: 1.7rem;
+    margin: 0;
+    color: black;
+}
+
+.date {
+    background: black;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 8px;
+    margin: 0;
+    color: black;
+}
+
+.date img {
+    width: 50px;
+}
